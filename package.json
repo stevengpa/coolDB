@@ -1,0 +1,29 @@
+{
+  "name": "cooldb",
+  "version": "1.0.0",
+  "description": "CoolDB allows easy CRUD Array <-> Ajax <-> Server interactions, also has validations, date mng and so on.",
+  "dependencies": {
+    "cuid": "^1.2.4"
+  },
+  "devDependencies": {
+  	"body-parser": "^1.10.1",
+  	"browserify": "^9.0.3",
+    "ejs": "^2.1.4",
+    "express": "^4.11.0",
+    "cuid": "^1.2.4",
+    "gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0",
+  	"gulp": "^3.8.11",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
