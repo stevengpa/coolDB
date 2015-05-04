@@ -2,7 +2,7 @@
   "name": "cooldb",
   "version": "1.0.0",
   "main": "index.js",
-  "description": "CoolDB allows easy CRUD Array <-> Ajax <-> Server interactions, also has validations, date mng and so on.",
+  "description": "CoolDB allows easy CRUD Array events.",
   "dependencies": {
     "cuid": "^1.2.4"
   },
