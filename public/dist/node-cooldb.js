@@ -15,7 +15,26 @@ cooldb = function cooldb() {
 				run.callback(run.fn.apply(undefined, run.arguments));
 			}, (ms == undefined) ? 0 : ms);
 	}
+        
+    updateProps : function updateProps(source, dest) {
 
+        for (var key in source) {
+
+            if(dest.hasOwnProperty(key)){
+                if (key != 'cuid')
+                    dest[key] = source[key];
+            }
+
+        }
+	}
+
+    dbClone : function dbClone() {
+
+		var strObject = JSON.stringify(cdb);
+
+		return JSON.parse(strObject);
+	}
+    
     return {
         
         add: function add(params, cb) {
@@ -107,6 +126,10 @@ cooldb = function cooldb() {
             return cdb;
         },
         
+        clone: function clone() {
+            return dbClone();
+        },
+        
         get: function get(params, cb) {
             // >> Validations <<
             
@@ -163,8 +186,6 @@ cooldb = function cooldb() {
 
                 return result;
             }
-            
-            return this;
             
         },
         
@@ -228,6 +249,62 @@ cooldb = function cooldb() {
             return this;
             
         },
+        
+        update: function update(params, cb) {
+            // >> Validations <<
+            
+            // default param array
+            params  = params || {};
+            cb      = cb || function() {};
+            
+            var key   = null,
+                value = null;
+            
+            // item key prop
+            if (!params.hasOwnProperty('key'))
+                throw 'Key => [key] was not found';
+            else {
+                if (params.hasOwnProperty('key')) key = params.key;
+            }
+            
+            // item value prop
+            if (!params.hasOwnProperty('value') )
+                throw 'Key => [value] was not found';
+            else {
+                if (params.hasOwnProperty('value')) value = params.value;
+            }
+            
+            // item key prop
+            if (!params.hasOwnProperty('item'))
+                throw 'Key => [item] was not found';
+            
+            // async default false
+            if (!params.hasOwnProperty('async')) params.async = false;
+            if (!params.hasOwnProperty('ms')) params.ms = 0;
+                        
+            // update
+            if (params.async) {
+                setTimeout(function iasync(){ 
+                    
+                    this.get({ key: key, value: value}).items.forEach(function(dbItem){
+                        updateProps(params.item, dbItem);
+                        cb(dbItem);
+                    });
+                    
+                }, params.ms);
+                
+            } else {
+                
+                this.get({ key: key, value: value}).items.forEach(function(dbItem){
+                    updateProps(params.item, dbItem);
+                    cb(dbItem);
+                });
+                
+            }
+            
+            return this;
+            
+        }
         
     };
     

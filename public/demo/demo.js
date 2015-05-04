@@ -40,7 +40,9 @@ console.log('After async del');
 //console.log(coolDB.get({ key: 'name', value: 'Carlos'}));
 //console.log(coolDB.first({ key: 'name', value: 'Carlos'}));
 
-console.log(coolDB.del({ key: 'name', value: 'Carlos' }));
+//console.log(coolDB.del({ key: 'name', value: 'Carlos' }));
+
+//console.log(coolDB.update({ key: 'name', value: 'Carlos', item: { name: 'Pacman' } }));
 
 console.log(coolDB.db());
 
