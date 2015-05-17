@@ -44,5 +44,16 @@ console.log('After async del');
 
 //console.log(coolDB.update({ key: 'name', value: 'Carlos', item: { name: 'Pacman' } }));
 
+/*
+var people = [
+    { name: 'Mary' },
+    { name: 'Blue' },
+    { name: 'Trunk' }
+];
+*/
+//coolDB.add({ item: people });
+//coolDB.add({ item: people, async: true });
+//coolDB.clean();
+
 console.log(coolDB.db());
 

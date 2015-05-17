@@ -1,0 +1,55 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'login' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 warn Username may not contain non-url-safe chars
+5 verbose adduser before first PUT { _id: 'org.couchdb.user:stevenperez',
+5 verbose adduser   name: 'stevenperez',
+5 verbose adduser   password: 'XXXXX',
+5 verbose adduser   email: 'steven.gpa.git@gmail.com',
+5 verbose adduser   type: 'user',
+5 verbose adduser   roles: [],
+5 verbose adduser   date: '2015-05-17T20:32:01.781Z' }
+6 verbose request uri https://registry.npmjs.org/-/user/org.couchdb.user:stevenperez
+7 verbose request new user, so can't send auth
+8 info attempt registry request try #1 at 14:32:01
+9 verbose request id 0c5df064aa886162
+10 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:stevenperez
+11 http 400 https://registry.npmjs.org/-/user/org.couchdb.user:stevenperez
+12 verbose headers { 'content-type': 'application/json',
+12 verbose headers   'cache-control': 'max-age=60',
+12 verbose headers   'content-length': '57',
+12 verbose headers   'accept-ranges': 'bytes',
+12 verbose headers   date: 'Sun, 17 May 2015 20:32:02 GMT',
+12 verbose headers   via: '1.1 varnish',
+12 verbose headers   connection: 'keep-alive',
+12 verbose headers   'x-served-by': 'cache-iad2129-IAD',
+12 verbose headers   'x-cache': 'MISS',
+12 verbose headers   'x-cache-hits': '0',
+12 verbose headers   'x-timer': 'S1431894722.587739,VS0,VE376' }
+13 verbose request invalidating /home/steven/.npm/registry.npmjs.org/-/user/org.couchdb.user_3Astevenperez on PUT
+14 verbose adduser back [ { [Error: Unknown error while authenticating : -/user/org.couchdb.user:stevenperez] statusCode: 400, code: 'E400' },
+14 verbose adduser   { ok: false, error: 'Unknown error while authenticating' },
+14 verbose adduser   '{"ok":false,"error":"Unknown error while authenticating"}' ]
+15 verbose stack Error: Unknown error while authenticating : -/user/org.couchdb.user:stevenperez
+15 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
+15 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+15 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:344:22)
+15 verbose stack     at Request.emit (events.js:110:17)
+15 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1239:14)
+15 verbose stack     at Request.emit (events.js:129:20)
+15 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1187:12)
+15 verbose stack     at IncomingMessage.emit (events.js:129:20)
+15 verbose stack     at _stream_readable.js:908:16
+15 verbose stack     at process._tickCallback (node.js:355:11)
+16 verbose statusCode 400
+17 verbose cwd /home/steven/Desktop/StevenSpecialProjects/coolDB
+18 error Linux 3.19.0-16-generic
+19 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "login"
+20 error node v0.12.2
+21 error npm  v2.7.4
+22 error code E400
+23 error Unknown error while authenticating : -/user/org.couchdb.user:stevenperez
+24 error If you need help, you may report this error at:
+24 error     <https://github.com/npm/npm/issues>
+25 verbose exit [ 1, true ]

@@ -1563,14 +1563,38 @@ cooldb = function cooldb() {
             // async default false
             if (!params.hasOwnProperty('async')) params.async = false;
             if (!params.hasOwnProperty('ms')) params.ms = 0;
-            if (!params.item.hasOwnProperty('cuid')) params.item.cuid = cuid();
             
             // add
             if (params.async) {
-                setTimeout(function iasync(){ cdb.push(params.item); cb(params.item); }, params.ms);
+                setTimeout(function iasync(){ 
+                    
+                    if (!Array.isArray(params.item)) {
+                        //>> add Object
+                        if (!params.item.hasOwnProperty('cuid')) params.item.cuid = cuid();
+                        cdb.push(params.item); cb(params.item); 
+                    } else if (Array.isArray(params.item)){
+                        //>> add Array
+                        params.item.forEach(function(item) {
+                            if (!item.hasOwnProperty('cuid')) item.cuid = cuid();
+                            cdb.push(item); cb(item); 
+                        });
+                    }
+                    
+                }, params.ms);
             } else {
-                cdb.push(params.item);
-                cb(params.item);
+                
+                if (!Array.isArray(params.item)) {
+                    //>> add Object
+                    if (!params.item.hasOwnProperty('cuid')) params.item.cuid = cuid();
+                    cdb.push(params.item); cb(params.item); 
+                } else if (Array.isArray(params.item)){
+                    //>> add Array
+                    params.item.forEach(function(item) {
+                        if (!item.hasOwnProperty('cuid')) item.cuid = cuid();
+                        cdb.push(item); cb(item); 
+                    });
+                }
+                
             }
             
             return this;
@@ -1640,6 +1664,10 @@ cooldb = function cooldb() {
         
         clone: function clone() {
             return dbClone();
+        },
+        
+        clean: function clean() {
+            cdb = [];
         },
         
         get: function get(params, cb) {
@@ -1823,5 +1851,5 @@ cooldb = function cooldb() {
 };
 
 module.exports = cooldb;
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_c9008b5.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_f23d053e.js","/")
 },{"buffer":2,"cuid":1,"oMfpAn":5}]},{},[6])
