@@ -1,55 +1,78 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'login' ]
-2 info using npm@2.7.4
-3 info using node@v0.12.2
-4 warn Username may not contain non-url-safe chars
-5 verbose adduser before first PUT { _id: 'org.couchdb.user:stevenperez',
-5 verbose adduser   name: 'stevenperez',
-5 verbose adduser   password: 'XXXXX',
-5 verbose adduser   email: 'steven.gpa.git@gmail.com',
-5 verbose adduser   type: 'user',
-5 verbose adduser   roles: [],
-5 verbose adduser   date: '2015-05-17T20:32:01.781Z' }
-6 verbose request uri https://registry.npmjs.org/-/user/org.couchdb.user:stevenperez
-7 verbose request new user, so can't send auth
-8 info attempt registry request try #1 at 14:32:01
-9 verbose request id 0c5df064aa886162
-10 http request PUT https://registry.npmjs.org/-/user/org.couchdb.user:stevenperez
-11 http 400 https://registry.npmjs.org/-/user/org.couchdb.user:stevenperez
-12 verbose headers { 'content-type': 'application/json',
-12 verbose headers   'cache-control': 'max-age=60',
-12 verbose headers   'content-length': '57',
-12 verbose headers   'accept-ranges': 'bytes',
-12 verbose headers   date: 'Sun, 17 May 2015 20:32:02 GMT',
-12 verbose headers   via: '1.1 varnish',
-12 verbose headers   connection: 'keep-alive',
-12 verbose headers   'x-served-by': 'cache-iad2129-IAD',
-12 verbose headers   'x-cache': 'MISS',
-12 verbose headers   'x-cache-hits': '0',
-12 verbose headers   'x-timer': 'S1431894722.587739,VS0,VE376' }
-13 verbose request invalidating /home/steven/.npm/registry.npmjs.org/-/user/org.couchdb.user_3Astevenperez on PUT
-14 verbose adduser back [ { [Error: Unknown error while authenticating : -/user/org.couchdb.user:stevenperez] statusCode: 400, code: 'E400' },
-14 verbose adduser   { ok: false, error: 'Unknown error while authenticating' },
-14 verbose adduser   '{"ok":false,"error":"Unknown error while authenticating"}' ]
-15 verbose stack Error: Unknown error while authenticating : -/user/org.couchdb.user:stevenperez
-15 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
-15 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
-15 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:344:22)
-15 verbose stack     at Request.emit (events.js:110:17)
-15 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1239:14)
-15 verbose stack     at Request.emit (events.js:129:20)
-15 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1187:12)
-15 verbose stack     at IncomingMessage.emit (events.js:129:20)
-15 verbose stack     at _stream_readable.js:908:16
-15 verbose stack     at process._tickCallback (node.js:355:11)
-16 verbose statusCode 400
-17 verbose cwd /home/steven/Desktop/StevenSpecialProjects/coolDB
-18 error Linux 3.19.0-16-generic
-19 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "login"
-20 error node v0.12.2
-21 error npm  v2.7.4
-22 error code E400
-23 error Unknown error while authenticating : -/user/org.couchdb.user:stevenperez
-24 error If you need help, you may report this error at:
-24 error     <https://github.com/npm/npm/issues>
-25 verbose exit [ 1, true ]
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . C:\Users\perez.s.19\AppData\Roaming\npm-cache\3a52ce78-.lock
+11 verbose tar pack [ 'C:\\Users\\perez.s.19\\AppData\\Roaming\\npm-cache\\cooldb\\1.0.2\\package.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package.tgz
+13 verbose folder .
+14 info prepublish cooldb@1.0.2
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. C:\Users\perez.s.19\AppData\Roaming\npm-cache\1f1177db-tar.lock
+17 silly lockFile 34903c23-m-cache-cooldb-1-0-2-package-tgz tar://C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package.tgz
+18 verbose lock tar://C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package.tgz C:\Users\perez.s.19\AppData\Roaming\npm-cache\34903c23-m-cache-cooldb-1-0-2-package-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile 34903c23-m-cache-cooldb-1-0-2-package-tgz tar://C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package.tgz
+22 silly lockFile 34903c23-m-cache-cooldb-1-0-2-package-tgz tar://C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package.tgz
+23 silly lockFile 98c32e24-g-npm-cache-cooldb-1-0-2-package C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package
+24 verbose lock C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package C:\Users\perez.s.19\AppData\Roaming\npm-cache\98c32e24-g-npm-cache-cooldb-1-0-2-package.lock
+25 silly lockFile 98c32e24-g-npm-cache-cooldb-1-0-2-package C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package
+26 silly lockFile 98c32e24-g-npm-cache-cooldb-1-0-2-package C:\Users\perez.s.19\AppData\Roaming\npm-cache\cooldb\1.0.2\package
+27 silly lockFile 3a52ce78- .
+28 silly lockFile 3a52ce78- .
+29 silly publish { name: 'cooldb',
+29 silly publish   version: '1.0.2',
+29 silly publish   main: 'index.js',
+29 silly publish   description: 'CoolDB allows easy CRUD Array events.',
+29 silly publish   dependencies: { cuid: '^1.2.4' },
+29 silly publish   devDependencies:
+29 silly publish    { 'body-parser': '^1.10.1',
+29 silly publish      browserify: '^9.0.3',
+29 silly publish      ejs: '^2.1.4',
+29 silly publish      express: '^4.11.0',
+29 silly publish      cuid: '^1.2.4',
+29 silly publish      gulp: '^3.8.11',
+29 silly publish      'gulp-browserify': '^0.5.1',
+29 silly publish      'gulp-rename': '^1.2.0',
+29 silly publish      'gulp-uglify': '^1.1.0' },
+29 silly publish   scripts:
+29 silly publish    { test: 'echo "Error: no test specified" && exit 1',
+29 silly publish      start: 'node server.js' },
+29 silly publish   author: '',
+29 silly publish   license: 'ISC',
+29 silly publish   readme: '# coolDB\r\nThis is a lightweight Client | Server library which helps the CRUD actions in memory over objects / data stored in an internal JS Array.',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: 'fec3dc26c2d65f48258acbf38f383c9ccfde19cf',
+29 silly publish   _id: 'cooldb@1.0.2',
+29 silly publish   _shasum: 'f367e56fab8e00f77ae8d014bae81efec44699f6',
+29 silly publish   _from: '.' }
+30 error need auth auth and email required for publishing
+30 error need auth You need to authorize this machine using `npm adduser`
+31 error System Windows_NT 6.1.7601
+32 error command "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+33 error cwd C:\Users\perez.s.19\Desktop\cooldb
+34 error node -v v0.10.32
+35 error npm -v 1.4.28
+36 error code ENEEDAUTH
+37 verbose exit [ 1, true ]

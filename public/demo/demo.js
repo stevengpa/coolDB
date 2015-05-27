@@ -1,16 +1,18 @@
 var coolDb = cooldb,
     coolDB = coolDb();
 
-/*
 coolDB.changeFeed(function(change){
     console.log(change);
 });
-*/
+
+
+//coolDB.add({ item: {name: 'Steven 2'}, async: true, ms: 0 });
 
 // add
 //coolDB.add({name: 'Steven'}); // Key => [item] was not found
+
 /*
-coolDB.add({ item: {name: 'Steven'} }); // Object {name: "Steven", cuid: "ci98yc54y00003550jm8y8oib"}
+coolDB.add({ item: {name: 'Steven'} }); 
 coolDB.add({ item: {name: 'Mochi'} });
 coolDB.add({ item: {name: 'Carlos'} });
 coolDB.add({ item: {name: 'Carlos'} });
@@ -18,6 +20,7 @@ coolDB.add({ item: {name: 'Cindy'} });
 coolDB.add({ item: {name: 'Jenny'} });
 coolDB.add({ item: {name: 'Papa'} });
 */
+
 /*
 console.log('Before async add');
 coolDB.add({ item: {name: 'Carlos'}, async: true });
@@ -51,21 +54,53 @@ console.log('After async del');
 
 //console.log(coolDB.update({ key: 'name', value: 'Carlos', item: { name: 'Pacman' } }));
 
-/*
+
 var people = [
     { name: 'Mary' },
+    { name: 'Blue' },
     { name: 'Blue' },
     { name: 'Trunk' }
 ];
 
 coolDB.add({ item: people });
+
+
+//console.log( coolDB.first({ key:'name', value: 'Blue' }) );
+// console.log( coolDB.get({ key:'name', value: 'Blue' }) );
+
+/*
+coolDB.first({ key:'name', value: 'Blue', async: true, ms: 0 }, function(result){
+    console.log(result);
+});
 */
-//coolDB.del({ key:'name', value: 'Mary' });
-//coolDB.add({ item: people, async: true });
 
-//coolDB.update({ key: 'name', value: 'Blue', item: { name: 'Pacman' }, async: true });
-//coolDB.update({ key: 'name', value: 'Blue', item: { name: 'Pacman' }, async: false });
-//coolDB.clean();
+/*
+coolDB.get({ key:'name', value: 'Blue', async: true, ms: 0 }, function(result){
+    console.log(result);
+});
+*/
 
-console.log(coolDB.db());
+
+coolDB.del({ key:'name', value: 'Mary' });
+
+/*
+coolDB.del({ key:'name', value: 'Mary', async: true, ms: 0 }, function(result){
+    console.log(result);
+});
+*/
+
+//coolDB.add({ item: people, async: true, ms: 0 });
+
+coolDB.update({ key: 'name', value: 'Blue', item: { name: 'Pacman' } });
+
+/*
+coolDB.update({ key: 'name', value: 'Blue', item: { name: 'Pacman' }, async: false, ms: 0 }, 
+function (result){
+    console.log(result);
+});
+*/
+
+//console.log(coolDB.db());
+//console.log(coolDB.clone());
+console.log( coolDB.clean() );
 
