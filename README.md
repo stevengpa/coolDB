@@ -38,9 +38,8 @@ coolDB.add({ item: {name: 'Steven'} }); // Added => Object {name: "Steven", cuid
 // Async
 coolDB.add({ item: {name: 'Steven 2'}, async: true, ms: 500 }, 
   function(result){
-    console.log(result);
+    console.log(result); // Object {old: null, new: Object, action: "Inserted"}
 });
-// Object {old: null, new: Object, action: "Inserted"}
 
 // >> Add Array <<
 // Sync
@@ -49,10 +48,10 @@ coolDB.add({ item: [{ name: 'Steven' }, { name: 'Steven 2' }] });
 // Async
 coolDB.add({ item: [{ name: 'Steven' }, { name: 'Steven 2' }], async: true, ms: 0 }, 
   function(result){
-    console.log(result);
+    console.log(result); 
+    // Object {old: null, new: Object, action: "Inserted"} 
+    // Object {old: null, new: Object, action: "Inserted"}
 });
-// Object {old: null, new: Object, action: "Inserted"}
-// Object {old: null, new: Object, action: "Inserted"}
 
 ```
 ### del
@@ -69,8 +68,61 @@ coolDB.del({ key:'name', value: 'Mary' }); // Delete all items where name = Mary
 // Async
 coolDB.del({ key:'name', value: 'Mary', async: true, ms: 0 }, 
   function(result){
-    console.log(result);
+    console.log(result); // Object {old: Object, new: null, action: "Deleted"}
 });
-// Object {old: Object, new: null, action: "Deleted"}
+
+```
+### update
+Update the items where a key + value match with the items stored inside the cooldb Array
+```
+function update(params, cb)
+params: { key (Property name) | value (Property value) | item (New Property values) |async (true/false) | ms (setTimeout milliseconds) }
+returns: cooldb object
+```
+``` javascript
+// Sync
+coolDB.update({ key: 'name', value: 'Blue', item: { name: 'Pacman' } }); // Update name = Pacman where name = Blue
+
+// Async
+coolDB.update({ key: 'name', value: 'Blue', item: { name: 'Pacman' }, async: false, ms: 0 }, 
+  function (result){
+    console.log(result); // Object {old: Object, new: Object, action: "Updated"}
+});
+
+```
+### first
+Return the first item where a key + value match with the items stored inside the cooldb Array
+```
+function first(params, cb)
+params: { key (Property name) | value (Property value) | async (true/false) | ms (setTimeout milliseconds) }
+returns: Object { item (First object found) | count (Number of objects found) }
+```
+``` javascript
+// Sync
+coolDB.first({ key:'name', value: 'Blue' }); // Object {item: Object, count: 1} 
+
+// Async
+coolDB.first({ key:'name', value: 'Blue', async: true, ms: 0 }, 
+  function(result){
+    console.log(result); // Object {item: Object, count: 1}
+});
+
+```
+### get
+Get the items where a key + value match with the items stored inside the cooldb Array
+```
+function get(params, cb)
+params: { key (Property name) | value (Property value) | async (true/false) | ms (setTimeout milliseconds) }
+returns: Object { items (Array of objects found) | count (Number of objects found) }
+```
+``` javascript
+// Sync
+coolDB.get({ key:'name', value: 'Blue' }); // Object {items: Array[1], count: 1}
+
+// Async
+coolDB.get({ key:'name', value: 'Blue', async: true, ms: 0 }, 
+  function(result){
+    console.log(result); // Object {items: Array[2], count: 2}
+});
 
 ```
