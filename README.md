@@ -126,3 +126,52 @@ coolDB.get({ key:'name', value: 'Blue', async: true, ms: 0 },
 });
 
 ```
+### db
+Get the cooldb Array Mirror.
+```
+function db()
+returns: Array
+```
+``` javascript
+// Sync
+coolDB.db(); // [Object, Object, Object, Object]
+
+```
+### clone
+Get the cooldb Array Clone.
+```
+function clone()
+returns: Array
+```
+``` javascript
+// Sync
+coolDB.clone(); // [Object, Object, Object, Object]
+
+```
+### clean
+Reset to empty Array the internal cooldb Array.
+```
+function clean(cb)
+returns: cooldb object
+```
+``` javascript
+// Sync
+coolDB.clean(); // Object {changeFeed: function, get: function, add: function, del: function, db: function…}
+
+```
+### changeFeed
+Subscribe to the internal cooldb Array's CRUD changes.
+```
+function clean(cb)
+returns: Object
+```
+``` javascript
+coolDB.changeFeed(function(change){
+    console.log(change);
+    // Object {old: null, new: Object, action: "Inserted"}
+    // Object {old: Object, new: null, action: "Deleted"}
+    // Object {old: Object, new: Object, action: "Updated"}
+    // Object {old: null, new: null, action: "Cleaned"}
+});
+
+```
