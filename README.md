@@ -162,7 +162,7 @@ coolDB.clean(); // Object {changeFeed: function, get: function, add: function, d
 ### changeFeed
 Subscribe to the internal cooldb Array's CRUD changes.
 ```
-function clean(cb)
+function changeFeed(fn)
 returns: Object
 ```
 ``` javascript
